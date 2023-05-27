@@ -1,0 +1,43 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/homenavbar.ejs') %>
+
+<div class="container">
+<br>
+    <div class="h-100 p-5 bg-light border rounded-3">
+        <h2>Bem vindo</h2>
+        <p>Esse é o tieduca feito em Node.js</p>
+        <button class="btn btn-outline-secondary" type="button">Leia mais..</button>
+      </div>
+<br>
+    <% articles.forEach(article => { %>
+        <div class="card-header">
+            <h2><%= article.title %></h2>
+        </div>
+        <div class="card-body">
+            <%- article.body %>
+            <br><br>
+            <a href="/<%= article.slug %>" class="btn btn-primary">Ler artigo</a>
+        </div>
+    <% }) %>
+
+    <div class="h-100 p-5 bg-light border rounded-3">
+        <div>
+            <p><strong>Não encontrou o que precisava?</strong></p>
+          <form action="https://www.google.com/search" method="get">
+            <input class="form-control" type="text" name="q" placeholder="Digite aqui sua pesquisa...">
+            <a class="btn btn-primary" href="#" onclick="this.href='https://www.google.com/search?q='+encodeURIComponent(this.previousElementSibling.value)">Pesquisar</a>
+          </form>
+        </div>
+      </div>          
+      
+
+    <div class="row">
+        <div class="col col-12">
+            <a style="float:right" href="/articles/page/2">Próxima página</a>
+        </div>
+    </div>
+
+
+</div>
+
+<%- include ('partials/footer.ejs') %>

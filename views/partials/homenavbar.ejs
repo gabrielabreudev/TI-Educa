@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <a class="navbar-brand" href="/">
+        TI Educa
+    </a>
+
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/" >Home</a>
+        </li>
+        <% categories.forEach(category => { %>
+        <li class="nav-item">
+            <a class="nav-link" href="/category/<%= category.slug %>" ><%= category.title %></a>
+        </li>
+        <% }) %>
+    </ul>
+    <div class="d-inline-block">
+      <a href="#" class="btn btn-warning" onclick="openPopup()">Chat</a>
+    </div>
+    
+    <script>
+      function openPopup() {
+        window.open("https://tawk.to/chat/646571cdad80445890ed94a3/1h0m493ef", "_blank", "width=600,height=400");
+      }
+    </script>
+      
+    <div class="d-inline-block ms-2">
+        <a class="btn btn-danger" href="/login">
+          Área admin
+        </a>
+      </div>    
+      
+
+</nav>
